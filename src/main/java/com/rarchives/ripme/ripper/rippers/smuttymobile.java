@@ -20,12 +20,12 @@ import com.rarchives.ripme.utils.Http;
  * -> Sometimes "/p/"
  * No way to know without loading the image page.
  */
-public class mobilesmutty extends AlbumRipper {
+public class smuttymobile extends AlbumRipper {
 
     private static final String DOMAIN = "smutty.com",
                                 HOST   = "smutty";
 
-    public mobilesmutty(URL url) throws IOException {
+    public smuttymobile(URL url) throws IOException {
         super(url);
     }
 
