@@ -49,7 +49,7 @@ public class SmuttyRipper extends AlbumRipper {
                 break;
             }
             page++;
-            url = "http://smutty.com/h/" + tag + "/?q=%23" + tag + "&page=" + page + "&sort=date&lazy=1";
+            url = "http://m.smutty.com/h/" + tag + "/?q=%23" + tag + "&page=" + page + "&sort=date&lazy=1";
             this.sendUpdate(STATUS.LOADING_RESOURCE, url);
             logger.info("    Retrieving " + url);
             Document doc;
@@ -107,7 +107,7 @@ public class SmuttyRipper extends AlbumRipper {
 
     @Override
     public String getGID(URL url) throws MalformedURLException {
-        Pattern p = Pattern.compile("^https?://smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
+        Pattern p = Pattern.compile("^https?://m\\.smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
         Matcher m = p.matcher(url.toExternalForm());
         if (m.matches()) {
             return m.group(1);
@@ -117,7 +117,7 @@ public class SmuttyRipper extends AlbumRipper {
         if (m.matches()) {
             return m.group(1).replace("%23", "");
         }
-        throw new MalformedURLException("Expected tag in URL (smutty.com/h/tag and not " + url);
+        throw new MalformedURLException("Expected tag in URL (m.smutty.com/h/tag and not " + url);
     }
 
 }
