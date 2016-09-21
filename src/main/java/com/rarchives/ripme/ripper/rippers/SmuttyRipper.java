@@ -71,6 +71,24 @@ public class SmuttyRipper extends AlbumRipper {
                 }
                 String imageUrl = image.attr("src");
 
+            // Construct direct link to image based on thumbnail
+-                StringBuilder sb = new StringBuilder();
+-                String[] fields = imageUrl.split("/");
+-                
+-                    }
+-                    sb.append(fields[i]);
+-                    if (i < fields.length - 1) {
+-                        sb.append("/");
+-                    }
+-                }
+-                imageUrl = sb.toString();
+-                addURLToDownload(new URL(imageUrl));
+-            }
+-            if (doc.select("#next").size() == 0) {
+-                break; // No more pages
+-            }
+-            // Wait before loading next page
+            
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
