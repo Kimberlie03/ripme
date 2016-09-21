@@ -88,7 +88,7 @@ public class SmuttyRipper extends AlbumRipper {
 
     @Override
     public String getGID(URL url) throws MalformedURLException {
-        Pattern p = Pattern.compile("^https?://smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
+        Pattern p = Pattern.compile("^https?://m\\.smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
         Matcher m = p.matcher(url.toExternalForm());
         if (m.matches()) {
             return m.group(1);
