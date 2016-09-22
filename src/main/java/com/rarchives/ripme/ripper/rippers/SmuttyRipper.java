@@ -75,7 +75,7 @@ public class SmuttyRipper extends AlbumRipper {
                 StringBuilder sb = new StringBuilder();
                 String[] fields = imageUrl.split("/");
                 for (int i = 0; i < fields.length; i++) {
-                    if (i == fields.length - 2 && fields[i].equals("m")) {
+                    if (i == fields.length - 2 && fields[i].equals("b")) {
                         fields[i] = "b";
                     }
                     sb.append(fields[i]);
