@@ -22,8 +22,8 @@ import com.rarchives.ripme.utils.Http;
  */
 public class SmuttyRipper extends AlbumRipper {
 
-    private static final String DOMAIN = "m.smutty.com",
-                                HOST   = "m.smutty";
+    private static final String DOMAIN = "smutty.com",
+                                HOST   = "smutty";
 
     public SmuttyRipper(URL url) throws IOException {
         super(url);
@@ -49,7 +49,7 @@ public class SmuttyRipper extends AlbumRipper {
                 break;
             }
             page++;
-            url = "http://m.smutty.com/h/" + tag + "/?q=%23" + tag + "&page=" + page + "&sort=date&lazy=1";
+            url = "http://smutty.com/h/" + tag + "/?q=%23" + tag + "&page=" + page + "&sort=date&lazy=1";
             this.sendUpdate(STATUS.LOADING_RESOURCE, url);
             logger.info("    Retrieving " + url);
             Document doc;
@@ -75,8 +75,8 @@ public class SmuttyRipper extends AlbumRipper {
                 StringBuilder sb = new StringBuilder();
                 String[] fields = imageUrl.split("/");
                 for (int i = 0; i < fields.length; i++) {
-                    if (i == fields.length - 2 && fields[i].equals("b")) {
-                        fields[i] = "b";
+                    if (i == fields.length - 2 && fields[i].equals("m")) {
+                        fields[i] = "p";
                     }
                     sb.append(fields[i]);
                     if (i < fields.length - 1) {
@@ -107,7 +107,7 @@ public class SmuttyRipper extends AlbumRipper {
 
     @Override
     public String getGID(URL url) throws MalformedURLException {
-        Pattern p = Pattern.compile("^https?://m\\.smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
+        Pattern p = Pattern.compile("^https?://smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
         Matcher m = p.matcher(url.toExternalForm());
         if (m.matches()) {
             return m.group(1);
