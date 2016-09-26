@@ -22,7 +22,7 @@ import com.rarchives.ripme.utils.Http;
  */
 public class SmuttyRipper extends AlbumRipper {
 
-    private static final String DOMAIN = "smutty.com",
+    private static final String DOMAIN = "m.smutty.com",
                                 HOST   = "smutty";
 
     public SmuttyRipper(URL url) throws IOException {
