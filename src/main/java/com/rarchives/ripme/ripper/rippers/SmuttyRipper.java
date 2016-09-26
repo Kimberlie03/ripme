@@ -22,7 +22,7 @@ import com.rarchives.ripme.utils.Http;
  */
 public class SmuttyRipper extends AlbumRipper {
 
-    private static final String DOMAIN = "m.smutty.com",
+    private static final String DOMAIN = "smutty.com",
                                 HOST   = "smutty";
 
     public SmuttyRipper(URL url) throws IOException {
@@ -107,7 +107,7 @@ public class SmuttyRipper extends AlbumRipper {
 
     @Override
     public String getGID(URL url) throws MalformedURLException {
-        Pattern p = Pattern.compile("^https?://m.\\smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
+        Pattern p = Pattern.compile("^https?://m\\.smutty\\.com/h/([a-zA-Z0-9\\-_]+).*$");
         Matcher m = p.matcher(url.toExternalForm());
         if (m.matches()) {
             return m.group(1);
