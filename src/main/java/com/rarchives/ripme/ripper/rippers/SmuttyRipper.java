@@ -70,7 +70,7 @@ public class SmuttyRipper extends AlbumRipper {
                     break;
                 }
                 String imageUrl = image.attr("src");
-
+                }
                 addURLToDownload(new URL(imageUrl));
             }
             if (doc.select("#next").size() == 0) {
